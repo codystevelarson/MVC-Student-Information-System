@@ -1,0 +1,39 @@
+﻿@model List<Exercises.Models.Data.Course>
+
+@{
+    ViewBag.Title = "Courses";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>Courses</h3>
+            @Html.ActionLink("Add Course", "AddCourse", "Admin", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-striped" style="width: auto">
+            <thead>
+                <tr>
+                    <th>Major Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var course in Model)
+                {
+                    <tr>
+                        <td>@course.CourseName</td>
+                        <td>
+                            @Html.ActionLink("Edit", "EditCourse", "Admin", new { id = course.CourseId }, new { @class="btn btn-info"}) |
+                            @Html.ActionLink("Delete", "DeleteCourse", "Admin", new { id = course.CourseId }, new { @class="btn btn-danger"})
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
