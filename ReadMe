@@ -1,0 +1,6 @@
+MVC Student-Information-System
+
+An ASP.NET MVC web app to track students enrolled in a university
+
+- Created dynamically driven cshtml using in-memory repositories
+- Set up controllers and models to validate data
